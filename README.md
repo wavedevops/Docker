@@ -81,7 +81,3 @@ mysql> SHOW TABLES;
 1. load defalt data
 2. default data nutting but a schema
 3. If you have DB credentials Anyone who can establish a connection can do it.
-
-
-
-
