@@ -5,4 +5,4 @@ ENV MYSQL_ROOT_PASSWORD=ExpenseApp@1 \
     MYSQL_PASSWORD=ExpenseApp@1 \
     MYSQL_DATABASE=transactions
 
-COPY schema/*sql /docker-entrypoint-initdb.d/
+COPY schema/*.sql /docker-entrypoint-initdb.d/
