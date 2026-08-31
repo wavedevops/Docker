@@ -1,11 +1,21 @@
-FROM    node:20
-EXPOSE  8080
-RUN     useradd expense
-RUN     mkdir /app 
-RUN     chown expense:expense - R /app
-WORKDIR /app
-COPY    backend/package.json . \
-        *.js  . \
-RUN     npm install
+FROM node:20
 
-ENTRYPOINT [ "node", "index.js" ]
+EXPOSE 8080
+
+RUN useradd expense
+
+RUN mkdir /app
+
+RUN chown -R expense:expense /app
+
+WORKDIR /app
+
+COPY backend/package.json .
+
+COPY *.js .
+
+RUN npm install
+
+USER expense
+
+ENTRYPOINT ["node", "index.js"]
