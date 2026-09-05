@@ -4,7 +4,7 @@ RUN adduser nginx && echo "nginx:DevOps321" | chpasswd
 
 RUN rm -rf /usr/share/nginx/html/*
 
-COPY nginx.html /usr/share/nginx/html/index.html
+COPY index.html /usr/share/nginx/html/index.html
 
 USER nginx
 
