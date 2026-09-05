@@ -1,6 +1,6 @@
 FROM nginx
 
-RUN adduser nginx
+RUN useradd nginx
 
 RUN rm -rf /usr/share/nginx/html/*
 
