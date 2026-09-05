@@ -1,3 +1,9 @@
+# remove all running and stoped containers
+
+```sh
+docker rm -f $(docker ps -aq) 2>/dev/null; docker system prune -a --volumes -f
+```
+---
 # Resize EBS Storage
 
 check the partitions
