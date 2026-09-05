@@ -1,1 +1,12 @@
+version: "5.5.0"
 
+name: expense
+
+volumes:
+  db-valume:
+
+services:
+  mysql:
+    image: chandrahari321/mysql:v1.0.0
+    volumes:
+      - db-valume:/var/lib/mysql
