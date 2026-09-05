@@ -1,0 +1,11 @@
+FROM nginx
+
+RUN adduser nginx
+
+RUN rm -rf /usr/share/nginx/html/*
+
+COPY index.html /usr/share/nginx/html/index.html
+
+USER nginx
+
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
