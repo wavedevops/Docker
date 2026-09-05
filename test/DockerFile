@@ -1,6 +1,6 @@
-FROM nginx
+FROM nginx:alpine
 
-RUN adduser nginx && echo "nginx:DevOps321" | chpasswd
+RUN adduser -D nginx && echo "nginx:DevOps321" | chpasswd
 
 RUN rm -rf /usr/share/nginx/html/*
 
