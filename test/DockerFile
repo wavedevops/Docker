@@ -1,6 +1,4 @@
-FROM nginx:alpine
-
-RUN adduser -D nginx && echo "nginx:DevOps321" | chpasswd
+FROM nginx
 
 RUN rm -rf /usr/share/nginx/html/*
 
