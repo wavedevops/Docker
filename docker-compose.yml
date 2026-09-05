@@ -4,10 +4,11 @@ networks:
   expense:
 
 volumes:
-  db-valume:
+  db-volume:
 
 services:
   mysql:
+    container_name: mysql
     image: chandrahari321/mysql:v1.0.0
     volumes:
-      - db-valume:/var/lib/mysql
+      - db-volume:/var/lib/mysql
