@@ -2,6 +2,9 @@ version: "5.5.0"
 
 name: expense
 
+networks:
+  expense:
+
 volumes:
   db-valume:
 
