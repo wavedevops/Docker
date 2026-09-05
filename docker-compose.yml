@@ -12,19 +12,39 @@ services:
     image: chandrahari321/mysql:v1.0.0
     volumes:
       - db-volume:/var/lib/mysql
+    networks:
+      - expense
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+
   backend:
+    container_name: backend
+    image: chandrahari321/backend:v1.0.0
+    networks:
+      - expense
     depends_on:
       mysql:
         condition: service_healthy
-    container_name: backend
-    image: chandrahari321/backend:v1.0.0
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
   frontend:
+    container_name: frontend
+    image: chandrahari321/frontend:v1.0.0
+    networks:
+      - expense
     depends_on:
       mysql:
         condition: service_healthy
       backend:
         condition: service_healthy
-    container_name: frontend
-    image: chandrahari321/frontend:v1.0.0
     ports:
-      - 80:80
+      - "80:80"
