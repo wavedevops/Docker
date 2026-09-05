@@ -12,3 +12,16 @@ services:
     image: chandrahari321/mysql:v1.0.0
     volumes:
       - db-volume:/var/lib/mysql
+  backend:
+    depends_on: 
+      - mysql
+    container_name: backend
+    image: chandrahari321/backend:v1.0.0
+  frontend:
+    depends_on: 
+      - mysql
+      - backend
+    container_name: frontend
+    image: chandrahari321/frontend:v1.0.0
+    ports:
+      - 80:80
