@@ -38,7 +38,7 @@ services:
 
   frontend:
     container_name: frontend
-    image: chandrahari321/frontend:v1.0.0
+    image: chandrahari321/frontend:v2.0.0 #chandrahari321/frontend:v1.0.0
     networks:
       - expense
     depends_on:
