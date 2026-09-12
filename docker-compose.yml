@@ -43,15 +43,15 @@ services:
       retries: 10
       start_period: 10s
 
-  # frontend:
-  #   container_name: frontend
-  #   image: app:v1 #chandrahari321/frontend:v2.0.0 #chandrahari321/frontend:v1.0.0
-  #   networks:
-  #     - expense
-  #   depends_on:
-  #     mysql:
-  #       condition: service_healthy
-  #     backend:
-  #       condition: service_healthy
-  #   ports:
-  #     - "80:80"
+  frontend:
+    container_name: frontend
+    image: chandrahari321/frontend:v2.0.0 #chandrahari321/frontend:v1.0.0
+    networks:
+      - expense
+    depends_on:
+      mysql:
+        condition: service_healthy
+      backend:
+        condition: service_healthy
+    ports:
+      - "80:80"
