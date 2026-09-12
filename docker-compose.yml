@@ -9,7 +9,7 @@ volumes:
 services:
   mysql:
     container_name: mysql
-    image: chandrahari321/mysq:v2.0.0 #chandrahari321/mysql:v1.0.0
+    image: chandrahari321/mysql:v1.0.0
     
     environment:
       MYSQL_ROOT_PASSWORD: ExpenseApp@1
