@@ -10,6 +10,13 @@ services:
   mysql:
     container_name: mysql
     image: chandrahari321/mysql:v1.0.0
+    
+    environment:
+      MYSQL_ROOT_PASSWORD: ExpenseApp@1
+      MYSQL_USER: expense
+      MYSQL_PASSWORD: ExpenseApp@1
+      MYSQL_DATABASE: transactions
+    
     volumes:
       - db-volume:/var/lib/mysql
     networks:
