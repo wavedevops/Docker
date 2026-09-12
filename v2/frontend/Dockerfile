@@ -4,8 +4,8 @@ RUN rm -rf /usr/share/nginx/html/* \
     /etc/nginx/nginx.conf \
     /etc/nginx/conf.d/default.conf
 
-COPY expense.conf /etc/nginx/nginx.conf \
-    code /usr/share/nginx/html/
+COPY expense.conf /etc/nginx/nginx.conf
+COPY code /usr/share/nginx/html/
 
 # How to Run nginx in docker as non-root user in rhel
 
